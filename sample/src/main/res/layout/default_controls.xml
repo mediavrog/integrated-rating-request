@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/dump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="10sp"
+        tools:text="The dump"/>
+
+    <GridLayout
+        android:id="@+id/controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/incrAppStart"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="appStarts++"/>
+
+        <Button
+            android:id="@+id/incrDismiss"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="dismissCnt++"/>
+
+        <Button
+            android:id="@+id/incrDaysUsed"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="daysUsed++"/>
+
+        <Button
+            android:id="@+id/toggleRate"
+            android:layout_height="match_parent"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:text="tggl rate"/>
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_height="match_parent"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:text="Reset all"/>
+
+        <Button
+            android:id="@+id/resetDismisAt"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:text="rm dismAt"/>
+
+    </GridLayout>
+
+</merge>

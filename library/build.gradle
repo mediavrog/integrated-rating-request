@@ -1,12 +1,17 @@
 apply plugin: 'com.android.library'
-apply plugin: 'bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
+apply plugin: 'com.novoda.bintray-release'
+
+ext {
+    supportLibVersion = '23.1.1'
+    lib_version = '1.0.0'
+}
 
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.novoda:bintray-release:0.2.10'
+        classpath 'com.novoda:bintray-release:0.3.5'
     }
 }
 
@@ -18,39 +23,30 @@ android {
         minSdkVersion 16
         targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_VERSION)
         versionCode Integer.parseInt(project.LIB_VERSION_CODE)
-        versionName project.LIB_VERSION_NAME
+        versionName lib_version
     }
-}
-
-publish {
-    /**
-     * Properties for BinTray upload
-     */
-    Properties properties = new Properties()
-    File bintrayPropertiesFile = project.file('bintray.properties');
-    if (bintrayPropertiesFile.exists()) {
-        properties.load(bintrayPropertiesFile.newDataInputStream())
-    }
-    def btrayUser = properties.getProperty("bintray.user", "")
-    def btrayKey = properties.getProperty("bintray.apikey", "")
-
-    bintrayUser = btrayUser
-    bintrayKey = btrayKey
-    userOrg = btrayUser
-    groupId = 'net.mediavrog.irr'
-    artifactId = 'integrated-rating-request'
-    licences = "['MIT']"
-    publishVersion = libVersion
-    description = 'Ask your users for app ratings the nice way.'
-    website = 'https://github.com/mediavrog/integrated-rating-request'
-    issueTracker = 'https://github.com/mediavrog/integrated-rating-request/issues'
-    repository = 'https://github.com/mediavrog/integrated-rating-request.git'
-    autoPublish = false
-    dryRun = false
 }
 
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:support-v4:23.1.1'
+    compile 'net.mediavrog:ruli:1.0.0'
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:support-v4:${supportLibVersion}"
+}
+
+// PUBLISHING
+// run as 'gradle clean build bintrayUpload'
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+publish {
+    dryRun = false
+    groupId = 'net.mediavrog'
+    artifactId = 'integrated-rating-request'
+    publishVersion = lib_version
+    licences = ["MIT"]
+    bintrayUser = properties.getProperty("bintrayUser")
+    bintrayKey = properties.getProperty("bintrayApiKey")
+    desc = 'Smart and customizable rating requests, which won\'t annoy your users.'
+    website = 'https://github.com/mediavrog/integrated-rating-request'
 }

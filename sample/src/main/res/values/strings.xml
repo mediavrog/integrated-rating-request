@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Integrated Rating request Sample</string>
+    <string name="store_url">https://play.google.com/store/apps/details?id=net.mediavrog.samples.irr</string>
+    <string name="feedback_url">http://mediavrog.net/apps/?page_id=25#page-header</string>
 </resources>

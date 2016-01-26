@@ -34,3 +34,10 @@ captures/
 # Android Studio project files
 .idea
 *.iml
+
+# signing/publishing
+secure.properties
+*.jks
+
+# System files
+.DS_Store
