@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.mediavrog.samples.irr.DefaultRuleEngineActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rating Request will show up below, if DefaultRuleEngine's result is true (play with the controls)."/>
+
+    <net.mediavrog.irr.IntegratedRatingRequestLayout
+        style="@style/Irr.SnackBar.Layout"
+        android:id="@+id/irr_layout"
+        xmlns:irr="http://schemas.android.com/apk/res-auto"
+        irr:autoEvaluateDefaultRuleEngine="true"
+        irr:defaultRuleAppStartCount="10"
+        irr:defaultRuleDismissMaxCount="3"
+        irr:defaultRuleDismissPostponeDays="7"
+        irr:defaultRuleDistinctDays="3"
+        irr:feedbackUrl="@string/feedback_url"
+        irr:ratingUrl="@string/store_url">
+
+        <LinearLayout
+            android:id="@id/irr_nudge_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@id/irr_nudge_text"
+                style="@style/Irr.SnackBar.Text"
+                android:text="Enjoying our app?"/>
+
+            <TextView
+                android:id="@id/irr_nudge_accept_btn"
+                style="@style/Irr.SnackBar.Button"
+                android:text="Very much!"/>
+
+            <Button
+                android:id="@id/irr_nudge_decline_btn"
+                style="@style/Irr.SnackBar.Button.Decline"
+                android:text="×"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/irr_rate_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@id/irr_rate_text"
+                style="@style/Irr.SnackBar.Text"
+                android:text="How about rating it?"/>
+
+            <TextView
+                android:id="@id/irr_rate_accept_btn"
+                style="@style/Irr.SnackBar.Button"
+                android:text="Sure!"/>
+
+            <Button
+                android:id="@id/irr_rate_decline_btn"
+                style="@style/Irr.SnackBar.Button.Decline"
+                android:text="×"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/irr_feedback_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@id/irr_feedback_text"
+                style="@style/Irr.SnackBar.Text"
+                android:text="Got some feedback?"/>
+
+            <TextView
+                android:id="@id/irr_feedback_accept_btn"
+                style="@style/Irr.SnackBar.Button"
+                android:text="Yes"/>
+
+            <Button
+                android:id="@id/irr_feedback_decline_btn"
+                style="@style/Irr.SnackBar.Button.Decline"
+                android:text="×"/>
+        </LinearLayout>
+
+    </net.mediavrog.irr.IntegratedRatingRequestLayout>
+
+    <include
+        layout="@layout/default_controls_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

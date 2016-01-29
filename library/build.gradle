@@ -29,7 +29,7 @@ android {
 
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile 'net.mediavrog:ruli:1.0.0'
+    compile 'net.mediavrog:ruli:1.0.1'
     compile "com.android.support:appcompat-v7:${supportLibVersion}"
     compile "com.android.support:support-v4:${supportLibVersion}"
 }

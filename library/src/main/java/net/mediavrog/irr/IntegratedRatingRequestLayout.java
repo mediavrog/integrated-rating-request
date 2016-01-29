@@ -1,17 +1,10 @@
 package net.mediavrog.irr;
 
 import android.animation.LayoutTransition;
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.TypedArray;
-import android.net.Uri;
-import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import net.mediavrog.ruli.RuleEngine;
@@ -58,23 +51,23 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
             android.R.attr.animateLayoutChanges
     };
 
-    private int mNudgeLayoutResId = R.id.irr_nudge_layout;
+    private static final int mNudgeLayoutResId = R.id.irr_nudge_layout;
 
-    private int mRateLayoutResId = R.id.irr_rate_layout;
+    private static final int mRateLayoutResId = R.id.irr_rate_layout;
 
-    private int mFeedbackLayoutResId = R.id.irr_feedback_layout;
+    private static final int mFeedbackLayoutResId = R.id.irr_feedback_layout;
 
-    private int mNudgeAcceptBtnResId = R.id.irr_nudge_accept_btn;
+    private static final int mNudgeAcceptBtnResId = R.id.irr_nudge_accept_btn;
 
-    private int mNudgeDeclineBtnResId = R.id.irr_nudge_decline_btn;
+    private static final int mNudgeDeclineBtnResId = R.id.irr_nudge_decline_btn;
 
-    private int mRateAcceptBtnResId = R.id.irr_rate_accept_btn;
+    private static final int mRateAcceptBtnResId = R.id.irr_rate_accept_btn;
 
-    private int mRateDeclineBtnResId = R.id.irr_rate_decline_btn;
+    private static final int mRateDeclineBtnResId = R.id.irr_rate_decline_btn;
 
-    private int mFeedbackAcceptBtnResId = R.id.irr_feedback_accept_btn;
+    private static final int mFeedbackAcceptBtnResId = R.id.irr_feedback_accept_btn;
 
-    private int mFeedbackDeclineBtnResId = R.id.irr_feedback_decline_btn;
+    private static final int mFeedbackDeclineBtnResId = R.id.irr_feedback_decline_btn;
 
     /**
      * Flag to check whether we can just go ahead performing operations with the default rule engine
@@ -132,7 +125,7 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
             if (defAttrs != null) {
                 // enable layout transition to provide nice effects out of the box
                 boolean animateLayoutChanges = defAttrs.getBoolean(0, true);
-                if(animateLayoutChanges) setLayoutTransition(new LayoutTransition());
+                if (animateLayoutChanges) setLayoutTransition(new LayoutTransition());
 
                 defAttrs.recycle();
             }
@@ -261,7 +254,7 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
         });
     }
 
-    void toggleTo(boolean shouldShow){
+    void toggleTo(boolean shouldShow) {
         if (shouldShow) {
             show();
         } else {
@@ -307,7 +300,8 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
         findViewById(mNudgeAcceptBtnResId).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDecisionListener != null) mDecisionListener.onDismiss(getContext(), State.NUDGE);
+                if (mDecisionListener != null)
+                    mDecisionListener.onDismiss(getContext(), State.NUDGE);
                 setState(State.RATE);
             }
         });
@@ -315,7 +309,8 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
         findViewById(mNudgeDeclineBtnResId).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDecisionListener != null) mDecisionListener.onAccept(getContext(), State.NUDGE);
+                if (mDecisionListener != null)
+                    mDecisionListener.onAccept(getContext(), State.NUDGE);
                 setState(State.FEEDBACK);
             }
         });
@@ -345,7 +340,8 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
         findViewById(mFeedbackAcceptBtnResId).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDecisionListener != null) mDecisionListener.onAccept(getContext(), State.FEEDBACK);
+                if (mDecisionListener != null)
+                    mDecisionListener.onAccept(getContext(), State.FEEDBACK);
                 if (mActionListener != null) mActionListener.onFeedback(getContext());
                 hide();
             }
