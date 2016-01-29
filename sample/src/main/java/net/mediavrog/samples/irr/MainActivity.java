@@ -15,6 +15,8 @@ import net.mediavrog.irr.DefaultRuleEngine;
 public class MainActivity extends ListActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
+    private Class[] clazzes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +27,16 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.activity_main);
 
         // Defined Array values to show in ListView
-        String[][] values = new String[][] {
+        String[][] values = new String[][]{
                 {"Default Rule Engine Demo", "All configuration is done in xml; easiest to integrate"},
+                {"SnackBar Design Demo", "Shows the flexibility of IRR to customize to your design."},
                 {"Custom Rule Engine Demo", "Create your own fancy rules backed by any system."}
+        };
+
+        clazzes = new Class[]{
+                DefaultRuleEngineActivity.class,
+                SnackBarDesignActivity.class,
+                CustomRuleEngineActivity.class
         };
 
         setListAdapter(new ArrayAdapter<String[]>(this, android.R.layout.simple_list_item_2, android.R.id.text1, values) {
@@ -47,15 +56,7 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Log.d(TAG, "Clicked list at position " + position);
-
-        switch (position) {
-            case 0:
-                launchActivity(DefaultRuleEngineActivity.class);
-                break;
-            case 1:
-                launchActivity(CustomRuleEngineActivity.class);
-                break;
-        }
+        launchActivity(clazzes[position]);
     }
 
     void launchActivity(Class clazz) {

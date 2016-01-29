@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import net.mediavrog.irr.DefaultOnUserActionListener;
 import net.mediavrog.irr.DefaultRuleEngine;
 import net.mediavrog.irr.IntegratedRatingRequestLayout;
 import net.mediavrog.ruli.Rule;
@@ -67,7 +68,7 @@ public class CustomRuleEngineActivity extends AppCompatActivity {
         // Check which request we're responding to
         Log.d(TAG, "Got a result " + resultCode + " for request code " + requestCode + " / " + data);
 
-        if (requestCode == IntegratedRatingRequestLayout.RATE_REQUEST) {
+        if (requestCode == DefaultOnUserActionListener.RATE_REQUEST) {
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Thanks for your rating", Toast.LENGTH_LONG).show();

@@ -19,8 +19,8 @@ import android.net.Uri;
  * created by maik_vlcek
  */
 public class DefaultOnUserActionListener implements IntegratedRatingRequestLayout.OnUserActionListener {
-    public int RATE_REQUEST = 7650;
-    public int FEEDBACK_REQUEST = 7651;
+    public static int RATE_REQUEST = 7650;
+    public static int FEEDBACK_REQUEST = 7651;
 
     private String mRatingUrl;
 

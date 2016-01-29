@@ -13,9 +13,9 @@ import net.mediavrog.irr.IntegratedRatingRequestLayout;
 public class DefaultRuleEngineActivity extends AppCompatActivity {
     public static final String TAG = DefaultRuleEngineActivity.class.getSimpleName();
 
-    private TextView dump;
-    private IntegratedRatingRequestLayout irr;
-    private DefaultRuleEngine engine;
+    protected TextView dump;
+    protected IntegratedRatingRequestLayout irr;
+    protected DefaultRuleEngine engine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
