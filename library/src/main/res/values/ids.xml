@@ -1,0 +1,16 @@
+<resources>
+    <item type="id" name="irr_nudge_layout" />
+    <item type="id" name="irr_rate_layout" />
+    <item type="id" name="irr_feedback_layout" />
+
+    <item type="id" name="irr_nudge_text" />
+    <item type="id" name="irr_rate_text" />
+    <item type="id" name="irr_feedback_text" />
+    
+    <item type="id" name="irr_nudge_accept_btn" />
+    <item type="id" name="irr_nudge_decline_btn" />
+    <item type="id" name="irr_rate_accept_btn" />
+    <item type="id" name="irr_rate_decline_btn" />
+    <item type="id" name="irr_feedback_accept_btn" />
+    <item type="id" name="irr_feedback_decline_btn" />
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IntegratedRatingRequestLayout">
+        <attr name="ratingUrl" format="string"/>
+        <attr name="feedbackUrl" format="string"/>
+        <attr name="useCustomRuleEngine" format="boolean"/>
+        <attr name="autoEvaluateDefaultRuleEngine" format="boolean"/>
+        <attr name="defaultRuleAppStartCount" format="integer"/>
+        <attr name="defaultRuleDistinctDays" format="integer"/>
+        <attr name="defaultRuleDismissPostponeDays" format="integer"/>
+        <attr name="defaultRuleDismissMaxCount" format="integer"/>
+    </declare-styleable>
+</resources>
