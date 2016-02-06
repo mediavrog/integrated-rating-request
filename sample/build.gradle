@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "net.mediavrog.samples.irr"
-        minSdkVersion 16
+        minSdkVersion 11
         targetSdkVersion 23
         versionCode 2016012702
         versionName "0.6"

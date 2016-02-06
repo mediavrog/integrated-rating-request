@@ -42,7 +42,7 @@
             <TextView
                 android:id="@id/irr_nudge_accept_btn"
                 style="@style/Irr.SnackBar.Button"
-                android:text="Very much!"/>
+                android:text="VERY MUCH"/>
 
             <Button
                 android:id="@id/irr_nudge_decline_btn"
@@ -65,7 +65,7 @@
             <TextView
                 android:id="@id/irr_rate_accept_btn"
                 style="@style/Irr.SnackBar.Button"
-                android:text="Sure!"/>
+                android:text="SURE"/>
 
             <Button
                 android:id="@id/irr_rate_decline_btn"
@@ -88,7 +88,7 @@
             <TextView
                 android:id="@id/irr_feedback_accept_btn"
                 style="@style/Irr.SnackBar.Button"
-                android:text="Yes"/>
+                android:text="YES"/>
 
             <Button
                 android:id="@id/irr_feedback_decline_btn"

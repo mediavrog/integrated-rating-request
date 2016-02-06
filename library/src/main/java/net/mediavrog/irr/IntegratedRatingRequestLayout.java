@@ -234,7 +234,7 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
         // default rule engine evaluation should be fast enough to run on ui thread by default
         boolean autoEval = ta.getBoolean(R.styleable.IntegratedRatingRequestLayout_autoEvaluateDefaultRuleEngine, true);
 
-        DefaultRuleEngine engine = new DefaultRuleEngine(ctx, appStartCount, distinctDays, postponeDays, maxDismissCount);
+        DefaultRuleEngine engine = DefaultRuleEngine.newInstance(ctx, appStartCount, distinctDays, postponeDays, maxDismissCount);
         setOnUserDecisionListener(engine.getListener());
 
         configureEngine(engine);
@@ -264,6 +264,7 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
 
     void show() {
         if (mVisibilityListener != null) mVisibilityListener.onShow(this);
+        setState(State.NUDGE);
     }
 
     void hide() {

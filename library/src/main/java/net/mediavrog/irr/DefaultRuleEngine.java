@@ -11,8 +11,10 @@ import net.mediavrog.ruli.SimpleRule;
 import net.mediavrog.ruli.Value;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import static net.mediavrog.ruli.SimpleRule.Comparator.EQ;
@@ -23,7 +25,7 @@ import static net.mediavrog.ruli.SimpleRule.Comparator.LT_EQ;
 /**
  * Created by maikvlcek on 1/27/16.
  */
-public class DefaultRuleEngine extends RuleEngine implements PreferenceValue.PreferenceProvider {
+public class DefaultRuleEngine extends RuleEngine {
     public static final String TAG = DefaultRuleEngine.class.getSimpleName();
 
     /**
@@ -93,21 +95,23 @@ public class DefaultRuleEngine extends RuleEngine implements PreferenceValue.Pre
     private DefaultOnUserDecisionListener mListener;
     private Context mContext;
 
-    public DefaultRuleEngine(Context ctx) {
-        this(ctx, DEFAULT_APP_START_COUNT, DEFAULT_DISTINCT_DAYS, DEFAULT_POSTPONE_DAYS, DEFAULT_MAX_DISMISS_COUNT);
-    }
+    public static DefaultRuleEngine newInstance(final Context ctx, int appStartCount, int distinctDays, final int postponeDays, int maxDismissCount) {
+        PreferenceValue.PreferenceProvider pp = new PreferenceValue.PreferenceProvider() {
+            SharedPreferences prefs;
 
-    public DefaultRuleEngine(Context ctx, int appStartCount, int distinctDays, final int postponeDays, int maxDismissCount) {
-        super();
-        mContext = ctx;
+            @Override
+            public SharedPreferences getPreferences() {
+                if (prefs == null) prefs = DefaultRuleEngine.getPreferences(ctx);
+                return prefs;
+            }
+        };
 
-        // default rule; AND
-        RuleSet rules = new RuleSet.Builder()
-                .addRule(new SimpleRule<>(PreferenceValue.b(this, PREF_KEY_DID_RATE), EQ, false))
-                .addRule(new SimpleRule<>(PreferenceValue.i(this, PREF_KEY_APP_STARTS), GT_EQ, appStartCount))
-                .addRule(new SimpleRule<>(PreferenceValue.i(this, PREF_KEY_DAYS_USED), GT_EQ, distinctDays))
-                .addRule(new SimpleRule<>(PreferenceValue.i(this, PREF_KEY_DISMISSAL_COUNT), LT, maxDismissCount))
-                .addRule(new SimpleRule<>(PreferenceValue.s(this, PREF_KEY_LAST_DISMISSED_AT), LT_EQ, new Value<String>() {
+        RuleSet rule = new RuleSet.Builder()
+                .addRule(new SimpleRule<>(PreferenceValue.b(pp, PREF_KEY_DID_RATE), EQ, false))
+                .addRule(new SimpleRule<>(PreferenceValue.i(pp, PREF_KEY_APP_STARTS), GT_EQ, appStartCount))
+                .addRule(new SimpleRule<>(PreferenceValue.i(pp, PREF_KEY_DAYS_USED), GT_EQ, distinctDays))
+                .addRule(new SimpleRule<>(PreferenceValue.i(pp, PREF_KEY_DISMISSAL_COUNT), LT, maxDismissCount))
+                .addRule(new SimpleRule<>(PreferenceValue.s(pp, PREF_KEY_LAST_DISMISSED_AT), LT_EQ, new Value<String>() {
                     @Override
                     public String get() {
                         // compare to postpone days before today; current value should be smaller than that
@@ -117,7 +121,15 @@ public class DefaultRuleEngine extends RuleEngine implements PreferenceValue.Pre
                     }
                 })).build();
 
-        addRule(rules);
+        ArrayList<Rule> rules = new ArrayList<>();
+        rules.add(rule);
+
+        return new DefaultRuleEngine(ctx, rules);
+    }
+
+    public DefaultRuleEngine(Context ctx, List<Rule> rules) {
+        super(rules);
+        mContext = ctx;
     }
 
     public void setListener(DefaultOnUserDecisionListener l) {
@@ -127,11 +139,6 @@ public class DefaultRuleEngine extends RuleEngine implements PreferenceValue.Pre
     public DefaultOnUserDecisionListener getListener() {
         if (mListener == null) mListener = new DefaultOnUserDecisionListener();
         return mListener;
-    }
-
-    @Override
-    public SharedPreferences getPreferences() {
-        return getPreferences(mContext);
     }
 
     @Override
@@ -209,7 +216,8 @@ public class DefaultRuleEngine extends RuleEngine implements PreferenceValue.Pre
     }
 
     public static SharedPreferences getPreferences(Context ctx) {
-        if(sPrefs == null) sPrefs = ctx.getSharedPreferences(getPrefFileName(ctx), Context.MODE_PRIVATE);
+        if (sPrefs == null)
+            sPrefs = ctx.getSharedPreferences(getPrefFileName(ctx), Context.MODE_PRIVATE);
         return sPrefs;
     }
 

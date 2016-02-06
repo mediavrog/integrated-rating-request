@@ -14,6 +14,7 @@ import net.mediavrog.ruli.Rule;
 import net.mediavrog.ruli.RuleEngine;
 import net.mediavrog.ruli.RuleSet;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CustomRuleEngineActivity extends AppCompatActivity {
@@ -39,8 +40,9 @@ public class CustomRuleEngineActivity extends AppCompatActivity {
                 }).build();
 
         // OR
-        RuleEngine irrRuleEngine = new RuleEngine();
-        irrRuleEngine.addRule(evenDayRule);
+        ArrayList<Rule> rules = new ArrayList<>();
+        rules.add(evenDayRule);
+        RuleEngine irrRuleEngine = new RuleEngine(rules);
 
         // you can decide the timing to start rule evaluation or leave it up to irr
         // beware that certain types of rule might perform a long running operation to evaluate,
