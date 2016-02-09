@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="link_store" translatable="false">https://play.google.com/store/apps/details?id=net.mediavrog.samples.irr</string>
+    <string name="link_feedback" translatable="false">http://mediavrog.net/apps/?page_id=25#page-header</string>
+    <string name="link_help" translatable="false">http://mediavrog.net/apps/?page_id=25#page-header</string>
+    <string name="link_github" translatable="false">https://github.com/mediavrog/integrated-rating-request</string>
+    <string name="link_publisher" translatable="false">https://play.google.com/store/apps/developer?id=mediavrog</string>
+</resources>

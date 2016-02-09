@@ -10,51 +10,56 @@
         android:textSize="10sp"
         tools:text="The dump"/>
 
-    <GridLayout
+    <LinearLayout
         android:id="@+id/controls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_weight="1"
-        android:layout_gravity="center">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/incrAppStart"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:text="appStarts++"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/incrDismiss"
-            android:layout_column="0"
-            android:layout_row="1"
-            android:text="dismissCnt++"/>
+            <Button
+                android:id="@+id/incrAppStart"
+                style="@style/ControlButton"
+                android:text="appStarts++"/>
 
-        <Button
-            android:id="@+id/incrDaysUsed"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:text="daysUsed++"/>
 
-        <Button
-            android:id="@+id/toggleRate"
-            android:layout_height="match_parent"
-            android:layout_column="2"
-            android:layout_row="0"
-            android:text="tggl rate"/>
+            <Button
+                android:id="@+id/incrDaysUsed"
+                style="@style/ControlButton"
+                android:text="daysUsed++"/>
 
-        <Button
-            android:id="@+id/reset"
-            android:layout_height="match_parent"
-            android:layout_column="2"
-            android:layout_row="1"
-            android:text="Reset all"/>
+            <Button
+                android:id="@+id/toggleRate"
+                style="@style/ControlButton"
+                android:text="tggl rate"/>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/resetDismisAt"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:text="rm dismAt"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    </GridLayout>
+            <Button
+                android:id="@+id/incrDismiss"
+                style="@style/ControlButton"
+                android:text="dismissCnt++"/>
+
+            <Button
+                android:id="@+id/resetDismisAt"
+                style="@style/ControlButton"
+                android:text="rm dismAt"/>
+
+            <Button
+                android:id="@+id/reset"
+                style="@style/ControlButton"
+                android:text="Reset all"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </merge>

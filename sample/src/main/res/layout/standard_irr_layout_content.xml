@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@id/irr_nudge_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@id/irr_nudge_text"
+            style="@style/Irr.Default.Text"
+            android:text="Enjoying this app?"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@id/irr_nudge_decline_btn"
+                style="@style/Irr.Default.Button"
+                android:text="Not really"/>
+
+            <Button
+                android:id="@id/irr_nudge_accept_btn"
+                style="@style/Irr.Default.Button.Accept"
+                android:text="Yes!"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/irr_rate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@id/irr_rate_text"
+            style="@style/Irr.Default.Text"
+            android:text="How about a rating in the app store then?"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@id/irr_rate_decline_btn"
+                style="@style/Irr.Default.Button"
+                android:text="No, thanks"/>
+
+            <Button
+                android:id="@id/irr_rate_accept_btn"
+                style="@style/Irr.Default.Button.Accept"
+                android:text="Ok, sure."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/irr_feedback_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@id/irr_feedback_text"
+            style="@style/Irr.Default.Text"
+            android:text="Would you mind giving us some feedback?"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@id/irr_feedback_decline_btn"
+                style="@style/Irr.Default.Button"
+                android:text="No, thanks"/>
+
+            <Button
+                android:id="@id/irr_feedback_accept_btn"
+                style="@style/Irr.Default.Button.Accept"
+                android:text="Ok, sure."/>
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>

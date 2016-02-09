@@ -4,6 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 ext {
     supportLibVersion = '23.1.1'
     lib_version = '1.0.1'
+    lib_version_code = 2016020901
 }
 
 buildscript {
@@ -22,7 +23,7 @@ android {
     defaultConfig {
         minSdkVersion 11
         targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_VERSION)
-        versionCode Integer.parseInt(project.LIB_VERSION_CODE)
+        versionCode lib_version_code
         versionName lib_version
     }
 }

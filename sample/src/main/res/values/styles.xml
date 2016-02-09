@@ -8,26 +8,56 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Intro">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="ControlButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="Irr">
     </style>
 
     <!--
     DEFAULT LAYOUT SAMPLE
     -->
-    <style name="Irr.Custom">
+    <style name="Irr.Default">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="Irr.Custom.Text">
+    <style name="Irr.Default.Text">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">17dp</item>
     </style>
 
-    <style name="Irr.Custom.Button">
-        <item name="android:layout_width">wrap_content</item>
+    <style name="Irr.Default.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:background">@drawable/irr_button_decline</item>
+    </style>
+
+    <style name="Irr.Default.Button.Accept">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/irr_button_accept</item>
     </style>
 
     <!--

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/dump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="10sp"
+        tools:text="The dump"/>
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            style="@style/ControlButton"
+            android:id="@+id/setToday"
+            android:text="today"/>
+
+        <Button
+            style="@style/ControlButton"
+            android:id="@+id/setSaturday"
+            android:text="sat"/>
+
+        <Button
+            style="@style/ControlButton"
+            android:id="@+id/setSunday"
+            android:text="sun"/>
+
+        <Button
+            style="@style/ControlButton"
+            android:id="@+id/setMonday"
+            android:text="mon"/>
+
+    </LinearLayout>
+
+</merge>

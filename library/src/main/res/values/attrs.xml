@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="IntegratedRatingRequestLayout">
+    <declare-styleable name="IrrLayout">
         <attr name="ratingUrl" format="string"/>
         <attr name="feedbackUrl" format="string"/>
         <attr name="useCustomRuleEngine" format="boolean"/>
