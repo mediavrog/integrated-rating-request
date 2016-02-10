@@ -1,4 +1,6 @@
 # Integrated Rating Request
+
+[![Join the chat at https://gitter.im/mediavrog/integrated-rating-request](https://badges.gitter.im/mediavrog/integrated-rating-request.svg)](https://gitter.im/mediavrog/integrated-rating-request?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-integrated-rating-request-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/????)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=11)
