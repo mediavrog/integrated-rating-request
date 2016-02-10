@@ -9,10 +9,14 @@ import net.mediavrog.irr.IrrAdapterDecorator;
 public class DefaultEngineListActivity extends DefaultEngineActivity {
     public static final String TAG = DefaultEngineListActivity.class.getSimpleName();
 
+    private IrrAdapterDecorator irrDecoAdapter;
+
+    @Override
     protected int getLayoutResId() {
         return R.layout.activity_default_engine_list;
     }
 
+    @Override
     protected void initialize() {
         // setup listview with 100 elements
         String[] values = new String[100];
@@ -24,8 +28,14 @@ public class DefaultEngineListActivity extends DefaultEngineActivity {
 
         // show the irr view at the 10th position (index starts at 0)
         // don't pass a rule engine here but use the default implementation provided by the irr itself
-        IrrAdapterDecorator irrDecoAdapter = new IrrAdapterDecorator(this, myAdapter, 9, R.layout.standard_irr_layout);
+        irrDecoAdapter = new IrrAdapterDecorator(this, myAdapter, 9, R.layout.standard_irr_layout);
         lv.setAdapter(irrDecoAdapter);
         engine = (DefaultRuleEngine) irrDecoAdapter.getUnderlyingRuleEngine();
+    }
+
+    @Override
+    void evaluateRules(boolean onlyDump) {
+        if(!onlyDump) irrDecoAdapter.notifyRuleEngineStateChanged();
+        super.evaluateRules(onlyDump);
     }
 }
