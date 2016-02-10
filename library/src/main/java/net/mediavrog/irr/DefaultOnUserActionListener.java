@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 
 /**
- * Default implementation of a {@link net.mediavrog.irr.IntegratedRatingRequestLayout.OnUserActionListener}.
+ * Default implementation of a {@link net.mediavrog.irr.IrrLayout.OnUserActionListener}.
  * <ul>
  * <li>onRate(): Launches {@link Intent#ACTION_VIEW} intent for url given as irr:storeUrl or the play store url generated from the package name</li>
  * <li>onFeedback(): Launches {@link Intent#ACTION_VIEW} intent url given as irr:feedbackUrl</li>
@@ -18,7 +18,7 @@ import android.net.Uri;
  *
  * created by maik_vlcek
  */
-public class DefaultOnUserActionListener implements IntegratedRatingRequestLayout.OnUserActionListener {
+public class DefaultOnUserActionListener implements IrrLayout.OnUserActionListener {
     public static int RATE_REQUEST = 7650;
     public static int FEEDBACK_REQUEST = 7651;
 

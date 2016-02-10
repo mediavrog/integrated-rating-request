@@ -3,7 +3,7 @@ package net.mediavrog.irr;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import net.mediavrog.irr.IntegratedRatingRequestLayout.OnUserDecisionListener;
+import net.mediavrog.irr.IrrLayout.OnUserDecisionListener;
 import net.mediavrog.ruli.Rule;
 import net.mediavrog.ruli.RuleEngine;
 import net.mediavrog.ruli.RuleSet;
@@ -67,7 +67,7 @@ public class DefaultRuleEngine extends RuleEngine {
     public static class DefaultOnUserDecisionListener implements OnUserDecisionListener {
 
         @Override
-        public void onAccept(Context ctx, IntegratedRatingRequestLayout.State s) {
+        public void onAccept(Context ctx, IrrLayout.State s) {
             switch (s) {
                 case RATE:
                     trackRated(ctx);
@@ -79,7 +79,7 @@ public class DefaultRuleEngine extends RuleEngine {
         }
 
         @Override
-        public void onDismiss(Context ctx, IntegratedRatingRequestLayout.State s) {
+        public void onDismiss(Context ctx, IrrLayout.State s) {
             switch (s) {
                 // we don't track the first no thanks as dismissal, only from the last steps
                 case RATE:

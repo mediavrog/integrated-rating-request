@@ -1,5 +1,43 @@
 <resources>
-    <string name="app_name">Integrated Rating request Sample</string>
-    <string name="store_url">https://play.google.com/store/apps/details?id=net.mediavrog.samples.irr</string>
-    <string name="feedback_url">http://mediavrog.net/apps/?page_id=25#page-header</string>
+    <string name="app_name">Integrated Rating Request Demo</string>
+    <string name="default_engine">Default Rule Engine</string>
+    <string name="default_engine_intro">
+        This example uses a default setup, where the criteria are defined as layout attributes via XML.
+    </string>
+    <string name="snackbar_design">Snackbar Design</string>
+    <string name="custom_engine">Custom Rule Engine</string>
+    <string name="list_decorator">Irr List decorator</string>
+    <string name="default_engine_list_intro">
+        This example uses the IrrAdapterDecorator, to auto-manage the IRR at 10th position of a list.
+    </string>
+    <string name="custom_engine_intro">
+        This example demonstrates the use of a custom rule engine created in code, with custom rules.
+        Rating Request will show up below if it is weekend.
+    </string>
+    <string name="default_engine_snackbar_intro">
+        This example shows the flexibility to adopt the IrrLayout to your own needs.
+        The element behaves and looks roughly like a snackbar.
+    </string>
+    <string name="help">
+        Rating Request will show up, if the rule engine evaluates to true.
+        Use the button controls to modify the data used for decision making.
+    </string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About</string>
+    <string name="created_by">by mediavrog</string>
+    <string name="thanks"><![CDATA[Special thanks to
+        Circa Team for
+         <a href="https://medium.com/circa/the-right-way-to-ask-users-to-review-your-app-9a32fd604fca#.fz3ec9nrf">Insights about integrated rating requests</a>
+        Niek Haarman
+         for <a href="https://github.com/nhaarman/ListViewAnimations">ListViewAnimations</a>,
+        Qamar Loop
+         for <a href="https://dribbble.com/shots/1242983-Metro-Icons-freebie">Social Icons</a>
+        and the Google Android teams.]]></string>
+    <string name="copyright">© since 2016 mediavrog. All rights reserved.</string>
+    <string name="version">Version %s</string>
+    <string name="my_other_apps">Other apps by mediavrog</string>
+    <string name="repository">Integrated Rating Request project on Github</string>
+    <string name="homepage">mediavrog blog</string>
+    <string name="link_homepage">http://mediavrog.net/blog/</string>
+    <string name="menu_contact">Feedback</string>
 </resources>

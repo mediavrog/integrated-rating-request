@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.mediavrog.irr.IrrLayout
+    android:id="@+id/irr_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:irr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorPrimary"
+    android:padding="5dp"
+    irr:autoEvaluateDefaultRuleEngine="true"
+    irr:defaultRuleAppStartCount="10"
+    irr:defaultRuleDismissMaxCount="3"
+    irr:defaultRuleDismissPostponeDays="7"
+    irr:defaultRuleDistinctDays="3"
+    irr:feedbackUrl="@string/link_feedback"
+    irr:ratingUrl="@string/link_store">
+
+    <include layout="@layout/standard_irr_layout_content"/>
+
+</net.mediavrog.irr.IrrLayout>

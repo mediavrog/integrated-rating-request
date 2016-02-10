@@ -13,8 +13,8 @@ import net.mediavrog.ruli.RuleEngine;
  * Created by maikvlcek on 1/26/16.
  */
 // TODO: persist across orientation changes etc
-public class IntegratedRatingRequestLayout extends FrameLayout {
-    public static final String TAG = IntegratedRatingRequestLayout.class.getSimpleName();
+public class IrrLayout extends FrameLayout {
+    public static final String TAG = IrrLayout.class.getSimpleName();
 
     /**
      * Current state of the rating request view.
@@ -39,9 +39,9 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
     }
 
     public interface OnToggleVisibilityListener {
-        void onShow(IntegratedRatingRequestLayout irr);
+        void onShow(IrrLayout irr);
 
-        void onHide(IntegratedRatingRequestLayout irr);
+        void onHide(IrrLayout irr);
     }
 
     /**
@@ -107,15 +107,15 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
      */
     private boolean mIsAttached;
 
-    public IntegratedRatingRequestLayout(Context context) {
+    public IrrLayout(Context context) {
         this(context, null);
     }
 
-    public IntegratedRatingRequestLayout(Context context, AttributeSet attrs) {
+    public IrrLayout(Context context, AttributeSet attrs) {
         this(context, attrs, -1);
     }
 
-    public IntegratedRatingRequestLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public IrrLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         if (attrs != null) {
@@ -131,12 +131,12 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
             }
 
             // custom view attributes
-            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.IntegratedRatingRequestLayout);
+            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.IrrLayout);
 
             if (ta != null) {
-                mRatingUrl = ta.getString(R.styleable.IntegratedRatingRequestLayout_ratingUrl);
+                mRatingUrl = ta.getString(R.styleable.IrrLayout_ratingUrl);
 
-                mFeedbackUrl = ta.getString(R.styleable.IntegratedRatingRequestLayout_feedbackUrl);
+                mFeedbackUrl = ta.getString(R.styleable.IrrLayout_feedbackUrl);
 
                 // set default listener if at least one of rating or feedback url was given
                 if (mRatingUrl != null || mFeedbackUrl != null) {
@@ -144,7 +144,7 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
                 }
 
                 // check if user wants to use a custom rule engine
-                mUseCustomEngine = ta.getBoolean(R.styleable.IntegratedRatingRequestLayout_useCustomRuleEngine, false);
+                mUseCustomEngine = ta.getBoolean(R.styleable.IrrLayout_useCustomRuleEngine, false);
 
                 // .. if not, we use the default engine provided by the library
                 if (!mUseCustomEngine) setupDefaultRuleEngine(context, ta);
@@ -223,16 +223,16 @@ public class IntegratedRatingRequestLayout extends FrameLayout {
      * @param ta
      */
     void setupDefaultRuleEngine(Context ctx, TypedArray ta) {
-        int appStartCount = ta.getInt(R.styleable.IntegratedRatingRequestLayout_defaultRuleAppStartCount, DefaultRuleEngine.DEFAULT_APP_START_COUNT);
+        int appStartCount = ta.getInt(R.styleable.IrrLayout_defaultRuleAppStartCount, DefaultRuleEngine.DEFAULT_APP_START_COUNT);
 
-        int distinctDays = ta.getInt(R.styleable.IntegratedRatingRequestLayout_defaultRuleDistinctDays, DefaultRuleEngine.DEFAULT_DISTINCT_DAYS);
+        int distinctDays = ta.getInt(R.styleable.IrrLayout_defaultRuleDistinctDays, DefaultRuleEngine.DEFAULT_DISTINCT_DAYS);
 
-        int postponeDays = ta.getInt(R.styleable.IntegratedRatingRequestLayout_defaultRuleDismissPostponeDays, DefaultRuleEngine.DEFAULT_POSTPONE_DAYS);
+        int postponeDays = ta.getInt(R.styleable.IrrLayout_defaultRuleDismissPostponeDays, DefaultRuleEngine.DEFAULT_POSTPONE_DAYS);
 
-        int maxDismissCount = ta.getInt(R.styleable.IntegratedRatingRequestLayout_defaultRuleDismissMaxCount, DefaultRuleEngine.DEFAULT_MAX_DISMISS_COUNT);
+        int maxDismissCount = ta.getInt(R.styleable.IrrLayout_defaultRuleDismissMaxCount, DefaultRuleEngine.DEFAULT_MAX_DISMISS_COUNT);
 
         // default rule engine evaluation should be fast enough to run on ui thread by default
-        boolean autoEval = ta.getBoolean(R.styleable.IntegratedRatingRequestLayout_autoEvaluateDefaultRuleEngine, true);
+        boolean autoEval = ta.getBoolean(R.styleable.IrrLayout_autoEvaluateDefaultRuleEngine, true);
 
         DefaultRuleEngine engine = DefaultRuleEngine.newInstance(ctx, appStartCount, distinctDays, postponeDays, maxDismissCount);
         setOnUserDecisionListener(engine.getListener());

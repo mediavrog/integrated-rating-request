@@ -4,17 +4,20 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import net.mediavrog.irr.DefaultRuleEngine;
-import net.mediavrog.irr.IntegratedRatingRequestLayout;
+import net.mediavrog.irr.IrrLayout;
 
-public class DefaultRuleEngineActivity extends AppCompatActivity {
-    public static final String TAG = DefaultRuleEngineActivity.class.getSimpleName();
+public class DefaultEngineActivity extends AppCompatActivity {
+    public static final String TAG = DefaultEngineActivity.class.getSimpleName();
 
     protected TextView dump;
-    protected IntegratedRatingRequestLayout irr;
+    protected IrrLayout irr;
     protected DefaultRuleEngine engine;
 
     @Override
@@ -30,31 +33,49 @@ public class DefaultRuleEngineActivity extends AppCompatActivity {
         // status textfield for debug info
         dump = (TextView) findViewById(R.id.dump);
 
-        irr = (IntegratedRatingRequestLayout) findViewById(R.id.irr_layout);
-
         initialize();
         setupControls();
         evaluateRules(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.help, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_help:
+                Toast.makeText(this, R.string.help, Toast.LENGTH_LONG).show();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     /**
      * @return
      */
     protected int getLayoutResId() {
-        return R.layout.activity_default_rule_engine;
+        return R.layout.activity_default_engine;
     }
 
     protected void initialize() {
+        irr = (IrrLayout) findViewById(R.id.irr_layout);
+
         engine = (DefaultRuleEngine) irr.getRuleEngine();
         engine.setListener(new DefaultRuleEngine.DefaultOnUserDecisionListener() {
             @Override
-            public void onAccept(Context ctx, IntegratedRatingRequestLayout.State s) {
+            public void onAccept(Context ctx, IrrLayout.State s) {
                 super.onAccept(ctx, s);
                 evaluateRules(true);
             }
 
             @Override
-            public void onDismiss(Context ctx, IntegratedRatingRequestLayout.State s) {
+            public void onDismiss(Context ctx, IrrLayout.State s) {
                 super.onDismiss(ctx, s);
                 evaluateRules(true);
             }

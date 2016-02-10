@@ -1,18 +1,25 @@
 package net.mediavrog.samples.irr;
 
-import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import net.mediavrog.irr.DefaultRuleEngine;
 
-public class MainActivity extends ListActivity {
+import java.net.URI;
+import java.net.URL;
+
+public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
     private Class[] clazzes;
@@ -30,16 +37,19 @@ public class MainActivity extends ListActivity {
         String[][] values = new String[][]{
                 {"Default Rule Engine Demo", "All configuration is done in xml; easiest to integrate"},
                 {"SnackBar Design Demo", "Shows the flexibility of IRR to customize to your design."},
-                {"Custom Rule Engine Demo", "Create your own fancy rules backed by any system."}
+                {"Custom Rule Engine Demo", "Create your own fancy rules backed by any system."},
+                {"Irr List Decorator Demo", "Decorate your ListAdapter to automatically inject the IRR Element."}
         };
 
         clazzes = new Class[]{
-                DefaultRuleEngineActivity.class,
-                SnackBarDesignActivity.class,
-                CustomRuleEngineActivity.class
+                DefaultEngineActivity.class,
+                DefaultEngineSnackBarActivity.class,
+                CustomEngineActivity.class,
+                DefaultEngineListActivity.class
         };
 
-        setListAdapter(new ArrayAdapter<String[]>(this, android.R.layout.simple_list_item_2, android.R.id.text1, values) {
+        ListView lv = (ListView) findViewById(android.R.id.list);
+        lv.setAdapter(new ArrayAdapter<String[]>(this, android.R.layout.simple_list_item_2, android.R.id.text1, values) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -48,15 +58,38 @@ public class MainActivity extends ListActivity {
 
                 text1.setText(getItem(position)[0]);
                 text2.setText(getItem(position)[1]);
+                text2.setPadding(0, 0, 0, 20);
+                text2.setTextColor(Color.GRAY);
                 return view;
+            }
+        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                launchActivity(clazzes[position]);
             }
         });
     }
 
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        Log.d(TAG, "Clicked list at position " + position);
-        launchActivity(clazzes[position]);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_contact:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_help))));
+                break;
+            case R.id.action_about:
+                launchActivity(MetaActivity.class);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     void launchActivity(Class clazz) {

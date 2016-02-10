@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="net.mediavrog.samples.irr.MainActivity">
+
+    <net.mediavrog.irr.IrrLayout
+        android:id="@+id/irr_layout"
+        xmlns:irr="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorPrimary"
+        android:padding="5dp"
+        irr:feedbackUrl="@string/link_feedback"
+        irr:ratingUrl="@string/link_store"
+        irr:useCustomRuleEngine="true">
+
+        <include layout="@layout/standard_irr_layout_content"/>
+    </net.mediavrog.irr.IrrLayout>
+
+    <TextView
+        style="@style/Intro"
+        android:layout_below="@id/irr_layout"
+        android:text="@string/custom_engine_intro"/>
+
+    <include
+        layout="@layout/custom_controls_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -4,28 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="net.mediavrog.samples.irr.DefaultRuleEngineActivity">
+    tools:context=".DefaultEngineActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rating Request will show up below, if DefaultRuleEngine's result is true (play with the controls)."/>
+        style="@style/Intro"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="@string/default_engine_snackbar_intro"/>
 
-    <net.mediavrog.irr.IntegratedRatingRequestLayout
-        style="@style/Irr.SnackBar.Layout"
+    <net.mediavrog.irr.IrrLayout
         android:id="@+id/irr_layout"
+        style="@style/Irr.SnackBar.Layout"
         xmlns:irr="http://schemas.android.com/apk/res-auto"
+        android:visibility="gone"
         irr:autoEvaluateDefaultRuleEngine="true"
         irr:defaultRuleAppStartCount="10"
         irr:defaultRuleDismissMaxCount="3"
         irr:defaultRuleDismissPostponeDays="7"
         irr:defaultRuleDistinctDays="3"
-        irr:feedbackUrl="@string/feedback_url"
-        irr:ratingUrl="@string/store_url">
+        irr:feedbackUrl="@string/link_feedback"
+        irr:ratingUrl="@string/link_store">
 
         <LinearLayout
             android:id="@id/irr_nudge_layout"
@@ -96,12 +93,18 @@
                 android:text="×"/>
         </LinearLayout>
 
-    </net.mediavrog.irr.IntegratedRatingRequestLayout>
+    </net.mediavrog.irr.IrrLayout>
 
-    <include
-        layout="@layout/default_controls_layout"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <include
+            layout="@layout/default_controls_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
 
 </RelativeLayout>
