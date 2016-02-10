@@ -8,7 +8,7 @@ android {
         applicationId "net.mediavrog.samples.irr"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 2016021001
+        versionCode 2016021002
         versionName "1.1.0"
     }
 

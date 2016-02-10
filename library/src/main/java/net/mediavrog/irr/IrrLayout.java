@@ -167,10 +167,13 @@ public class IrrLayout extends FrameLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mIsAttached = true;
 
-        // toggle immediately if rule engine did already calculate the result
-        toggleTo(mRuleEngine != null && mRuleEngine.isReady() && mRuleEngine.isValid());
+        if (!mIsAttached) {
+            mIsAttached = true;
+
+            // toggle immediately if rule engine did already calculate the result
+            toggleTo(mRuleEngine != null && mRuleEngine.isReady() && mRuleEngine.isValid());
+        }
     }
 
     @Override
