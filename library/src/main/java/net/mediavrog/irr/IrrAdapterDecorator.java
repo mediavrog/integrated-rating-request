@@ -122,7 +122,8 @@ public class IrrAdapterDecorator extends BaseAdapter {
      */
     @Override
     public int getCount() {
-        return mDecoratedBaseAdapter.getCount() + getOffset();
+        int decoratedCount = mDecoratedBaseAdapter.getCount();
+        return decoratedCount > 0 ? decoratedCount + getOffset() : 0;
     }
 
     @Override

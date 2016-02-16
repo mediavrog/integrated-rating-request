@@ -42,6 +42,7 @@ android {
         }
         staging {
             debuggable true
+            versionNameSuffix "|S"
             signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
