@@ -6,9 +6,15 @@
     </string>
     <string name="snackbar_design">Snackbar Design</string>
     <string name="custom_engine">Custom Rule Engine</string>
-    <string name="list_decorator">Irr List decorator</string>
+    <string name="list_decorator">Decorate ListAdapters</string>
+    <string name="list_decorator_async">Decorate async lists</string>
     <string name="default_engine_list_intro">
         This example uses the IrrAdapterDecorator, to auto-manage the IRR at 10th position of a list.
+    </string>
+        <string name="default_engine_async_list_intro">
+        This example uses the IrrAdapterDecorator, to auto-manage the IRR at 40th position of a list.
+            Data is loaded asynchronously with a 2 secs delay when scrolling near the end of the list.
+            (max 100 entries)
     </string>
     <string name="custom_engine_intro">
         This example demonstrates the use of a custom rule engine created in code, with custom rules.

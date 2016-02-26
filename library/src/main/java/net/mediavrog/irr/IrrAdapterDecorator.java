@@ -118,12 +118,11 @@ public class IrrAdapterDecorator extends BaseAdapter {
     }
 
     /**
-     * Increments the decorated item count by 1.
+     * Increments the decorated item count by 1 once the irr position is reached.
      */
     @Override
     public int getCount() {
-        int decoratedCount = mDecoratedBaseAdapter.getCount();
-        return decoratedCount > 0 ? decoratedCount + getOffset() : 0;
+        return mDecoratedBaseAdapter.getCount() + getOffset();
     }
 
     @Override
@@ -139,7 +138,7 @@ public class IrrAdapterDecorator extends BaseAdapter {
     @Override
     @NonNull
     public View getView(final int position, @Nullable final View convertView, @NonNull final ViewGroup parent) {
-        if (mIsShown && getItemViewType(position) == IRR_ITEM_TYPE) {
+        if (getItemViewType(position) == IRR_ITEM_TYPE) {
             if (convertView instanceof IrrLayout) {
                 return convertView;
             } else {
@@ -253,6 +252,6 @@ public class IrrAdapterDecorator extends BaseAdapter {
     }
 
     private int getOffset() {
-        return mIsShown ? 1 : 0;
+        return mIsShown && mDecoratedBaseAdapter.getCount() >= mIrrElementPosition ? 1 : 0;
     }
 }
