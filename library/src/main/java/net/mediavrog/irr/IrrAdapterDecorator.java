@@ -118,12 +118,12 @@ public class IrrAdapterDecorator extends BaseAdapter {
     }
 
     /**
-     * Increments the decorated item count by 1.
+     * Increments the decorated item count by 1 once the irr position is reached.
      */
     @Override
     public int getCount() {
         int decoratedCount = mDecoratedBaseAdapter.getCount();
-        return decoratedCount > 0 ? decoratedCount + getOffset() : 0;
+        return decoratedCount + (decoratedCount >= mIrrElementPosition ? getOffset() : 0);
     }
 
     @Override

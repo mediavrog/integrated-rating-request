@@ -38,14 +38,16 @@ public class MainActivity extends AppCompatActivity {
                 {"Default Rule Engine Demo", "All configuration is done in xml; easiest to integrate"},
                 {"SnackBar Design Demo", "Shows the flexibility of IRR to customize to your design."},
                 {"Custom Rule Engine Demo", "Create your own fancy rules backed by any system."},
-                {"Irr List Decorator Demo", "Decorate your ListAdapter to automatically inject the IRR Element."}
+                {"Irr List Decorator Demo", "Decorate your ListAdapter to automatically inject the IRR Element."},
+                {"Irr Async List Decorator Demo", "Decorate your ListAdapter with data loaded asynchronously."}
         };
 
         clazzes = new Class[]{
                 DefaultEngineActivity.class,
                 DefaultEngineSnackBarActivity.class,
                 CustomEngineActivity.class,
-                DefaultEngineListActivity.class
+                DefaultEngineListActivity.class,
+                DefaultEngineAsyncListActivity.class
         };
 
         ListView lv = (ListView) findViewById(android.R.id.list);

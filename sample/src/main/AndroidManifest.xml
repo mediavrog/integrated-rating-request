@@ -57,6 +57,15 @@
         </activity>
 
         <activity
+            android:name=".DefaultEngineAsyncListActivity"
+            android:label="@string/list_decorator_async"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity
             android:name=".MetaActivity"
             android:label="@string/menu_about"
             android:parentActivityName=".MainActivity">

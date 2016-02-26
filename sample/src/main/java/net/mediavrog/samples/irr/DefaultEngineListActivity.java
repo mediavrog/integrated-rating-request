@@ -35,7 +35,7 @@ public class DefaultEngineListActivity extends DefaultEngineActivity {
 
     @Override
     void evaluateRules(boolean onlyDump) {
-        if(!onlyDump) irrDecoAdapter.notifyRuleEngineStateChanged();
+        if (!onlyDump) irrDecoAdapter.notifyRuleEngineStateChanged();
         super.evaluateRules(onlyDump);
     }
 }
