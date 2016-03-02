@@ -21,8 +21,6 @@ As [popularized by Circa](https://medium.com/circa/the-right-way-to-ask-users-to
 
 ## Demo application
 
-Download [latest release apk](https://github.com/mediavrog/integrated-rating-request/releases/download/1.1.0.1/sample-release.apk) or
-
 <a href="https://play.google.com/store/apps/details?id=net.mediavrog.samples.irr" target="_blank">
   <img alt="Get it on Google Play"
       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
@@ -36,7 +34,7 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```java
 dependencies {
-    compile 'net.mediavrog:integrated-rating-request:1.1.0'
+    compile 'net.mediavrog:integrated-rating-request:1.1.1'
 }
 ```
 
@@ -245,11 +243,18 @@ If you have an awesome pull request, send it over!
 
 ## Changelog
 
-* 1.1.0 - Initial Release backed by ruli 1.1.0 
+* 1.1.1 
+  - Fixed bug with dicustom view types in IrrAdapterDecorator
+  
+* 1.1.0
+  - Initial Release backed by ruli 1.1.0 
 
 ## Known users
 
-* (work in progress) [Suikakeibo](https://play.google.com/store/apps/details?id=net.mediavrog.ic_card_expensetracker) - Suica reader/ledger
+| App | Description | Integration |
+| [Suikakeibo](https://play.google.com/store/apps/details?id=net.mediavrog.ic_card_expensetracker) | Suica reader/ledger - track your expenses with a simple touch | <a href="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" target="_blank">
+    <img src="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" width="100">
+  </a>
 
 If you are using the library and you would like to have your app listed, simply send a pull request.
 
