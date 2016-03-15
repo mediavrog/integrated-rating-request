@@ -1,7 +1,7 @@
 # Integrated Rating Request [ ![Download](https://api.bintray.com/packages/mediavrog/maven/integrated-rating-request/images/download.svg) ](https://bintray.com/mediavrog/maven/integrated-rating-request/_latestVersion)
 <sup>Badges galore</sup>
 [![Gitter](https://badges.gitter.im/mediavrog/integrated-rating-request.svg)](https://gitter.im/mediavrog/integrated-rating-request?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-integrated-rating-request-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/3283)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Integrated%20Rating%20Request-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3283)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-11%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=11)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
