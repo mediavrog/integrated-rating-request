@@ -305,7 +305,7 @@ public class IrrLayout extends FrameLayout {
             @Override
             public void onClick(View v) {
                 if (mDecisionListener != null)
-                    mDecisionListener.onDismiss(getContext(), State.NUDGE);
+                    mDecisionListener.onAccept(getContext(), State.NUDGE);
                 setState(State.RATE);
             }
         });
@@ -314,7 +314,7 @@ public class IrrLayout extends FrameLayout {
             @Override
             public void onClick(View v) {
                 if (mDecisionListener != null)
-                    mDecisionListener.onAccept(getContext(), State.NUDGE);
+                    mDecisionListener.onDismiss(getContext(), State.NUDGE);
                 setState(State.FEEDBACK);
             }
         });

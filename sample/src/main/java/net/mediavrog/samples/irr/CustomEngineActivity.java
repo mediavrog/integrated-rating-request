@@ -69,12 +69,12 @@ public class CustomEngineActivity extends AppCompatActivity {
         irr.setOnUserDecisionListener(new IrrLayout.OnUserDecisionListener() {
             @Override
             public void onAccept(Context ctx, IrrLayout.State s) {
-                Toast.makeText(ctx, "Accepted sth in state " + s.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ctx, "Accepted in state " + s.toString(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onDismiss(Context ctx, IrrLayout.State s) {
-                Toast.makeText(ctx, "Dismissed sth in state " + s.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ctx, "Dismissed in state " + s.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
