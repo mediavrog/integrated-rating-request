@@ -34,7 +34,7 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```java
 dependencies {
-    compile 'net.mediavrog:integrated-rating-request:1.1.1'
+    compile 'net.mediavrog:integrated-rating-request:1.1.2'
 }
 ```
 
@@ -242,6 +242,10 @@ irr.setRuleEngine(engine); // layout attr irr:useCustomRuleEngine must be set to
 If you have an awesome pull request, send it over!
 
 ## Changelog
+
+* 1.1.2
+  - Removed non-library resources
+  - fix for onDismiss/onAccept events in Nudge state
 
 * 1.1.1 
   - Fixed bug with dicustom view types in IrrAdapterDecorator

@@ -8,8 +8,8 @@ android {
         applicationId "net.mediavrog.samples.irr"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 2016022601
-        versionName "1.1.1"
+        versionCode 2016081101
+        versionName "1.1.2"
     }
 
     String securePropertiesPath = project.projectDir.path + "/secure.properties"
