@@ -368,17 +368,17 @@ public class IrrLayout extends FrameLayout {
         switch (step) {
             case NUDGE:
                 mNudgeView.setVisibility(VISIBLE);
-                mRateView.setVisibility(GONE);
-                mFeedbackView.setVisibility(GONE);
+                mRateView.setVisibility(INVISIBLE);
+                mFeedbackView.setVisibility(INVISIBLE);
                 break;
             case RATE:
-                mNudgeView.setVisibility(GONE);
+                mNudgeView.setVisibility(INVISIBLE);
                 mRateView.setVisibility(VISIBLE);
-                mFeedbackView.setVisibility(GONE);
+                mFeedbackView.setVisibility(INVISIBLE);
                 break;
             case FEEDBACK:
-                mNudgeView.setVisibility(GONE);
-                mRateView.setVisibility(GONE);
+                mNudgeView.setVisibility(INVISIBLE);
+                mRateView.setVisibility(INVISIBLE);
                 mFeedbackView.setVisibility(VISIBLE);
                 break;
         }
