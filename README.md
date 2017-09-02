@@ -26,6 +26,14 @@ As [popularized by Circa](https://medium.com/circa/the-right-way-to-ask-users-to
       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
 </a>
 
+## Support / Donate
+
+You use this library or want to support development? Send some Bitcoin to 14gyxZJMQ7DyrzjQYEDhz7FBo6HH57hKFj
+
+<img src="https://i.imgur.com/GBYkw9M.png" width="125">
+
+Thanks!
+
 ## Getting started
 
 #### Gradle Dependency (jcenter)
