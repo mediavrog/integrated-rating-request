@@ -267,6 +267,7 @@ If you have an awesome pull request, send it over!
 | --- | --- | --- |
 | [Suikakeibo](https://play.google.com/store/apps/details?id=net.mediavrog.ic_card_expensetracker) | Suica reader/ledger - track your expenses with a simple touch | <a href="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" target="_blank"><img src="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" width="100"></a>
 | [Monitor - EnergyHive & Engage](https://play.google.com/store/apps/details?id=com.danielstone.energyhive) | Monitor is a native and lightweight unofficial client for the EnergyHive and Efergy Engage Internet of Things platforms, beautifully designed with material design and free of adverts. | <a href="http://i.imgur.com/gzqPgss.png" target="_blank"><img src="http://i.imgur.com/gzqPgss.png" width="100"></a>
+| [+Arduino Control](https://play.google.com/store/apps/details?id=com.juniordamacena.maiscontrolearduino) | Through the +Arduino Control you can send voice and text commands to your Arduino via Bluetooth and still simplify your program. | <a href="https://raw.githubusercontent.com/jdamacena/integrated-rating-request/master/art/app_plus_arduino_control.png" target="_blank"><img src="https://raw.githubusercontent.com/jdamacena/integrated-rating-request/master/art/app_plus_arduino_control.png" width="100"></a>
 
 If you are using the library and you would like to have your app listed, simply send a pull request.
 
