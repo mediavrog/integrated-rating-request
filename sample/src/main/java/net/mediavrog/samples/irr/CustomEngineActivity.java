@@ -3,13 +3,14 @@ package net.mediavrog.samples.irr;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import net.mediavrog.irr.DefaultOnUserActionListener;
 import net.mediavrog.irr.IrrLayout;
