@@ -26,6 +26,14 @@ As [popularized by Circa](https://medium.com/circa/the-right-way-to-ask-users-to
       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
 </a>
 
+## Support / Donate
+
+You use this library or want to support development? Send some Bitcoin to 14gyxZJMQ7DyrzjQYEDhz7FBo6HH57hKFj
+
+<img src="https://i.imgur.com/GBYkw9M.png" width="125">
+
+Thanks!
+
 ## Getting started
 
 #### Gradle Dependency (jcenter)
@@ -258,6 +266,8 @@ If you have an awesome pull request, send it over!
 | App | Description | Integration |
 | --- | --- | --- |
 | [Suikakeibo](https://play.google.com/store/apps/details?id=net.mediavrog.ic_card_expensetracker) | Suica reader/ledger - track your expenses with a simple touch | <a href="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" target="_blank"><img src="https://github.com/mediavrog/integrated-rating-request/blob/master/art/app-suikakeibo.png?raw=true" width="100"></a>
+| [Monitor - EnergyHive & Engage](https://play.google.com/store/apps/details?id=com.danielstone.energyhive) | Monitor is a native and lightweight unofficial client for the EnergyHive and Efergy Engage Internet of Things platforms, beautifully designed with material design and free of adverts. | <a href="http://i.imgur.com/gzqPgss.png" target="_blank"><img src="http://i.imgur.com/gzqPgss.png" width="100"></a>
+| [+Arduino Control](https://play.google.com/store/apps/details?id=com.juniordamacena.maiscontrolearduino) | Through the +Arduino Control you can send voice and text commands to your Arduino via Bluetooth and still simplify your program. | <a href="https://raw.githubusercontent.com/jdamacena/integrated-rating-request/master/art/app_plus_arduino_control.png" target="_blank"><img src="https://raw.githubusercontent.com/jdamacena/integrated-rating-request/master/art/app_plus_arduino_control.png" width="100"></a>
 
 If you are using the library and you would like to have your app listed, simply send a pull request.
 
