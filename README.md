@@ -34,7 +34,7 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```java
 dependencies {
-    implementation 'com.github.mediavrog:integrated-rating-request:1.1.3'
+    implementation 'com.github.mediavrog:integrated-rating-request:1.1.4'
     implementation 'com.github.mediavrog:ruli:1.1.0'
 }
 ```
