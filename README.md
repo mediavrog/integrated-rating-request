@@ -28,13 +28,14 @@ As [popularized by Circa](https://medium.com/circa/the-right-way-to-ask-users-to
 
 ## Getting started
 
-#### Gradle Dependency (jcenter)
+#### Gradle Dependency (Jitpack)
 
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file.
 
 ```java
 dependencies {
-    compile 'net.mediavrog:integrated-rating-request:1.1.2'
+    implementation 'com.github.mediavrog:integrated-rating-request:1.1.3'
+    implementation 'com.github.mediavrog:ruli:1.1.0'
 }
 ```
 
